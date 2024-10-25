@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://esufkwqeqj12"]
+
+[ext_resource type="Texture2D" uid="uid://c7bnb2qk3g62c" path="res://art/green.png" id="1_k4jxq"]
+[ext_resource type="PackedScene" uid="uid://x0uyumwef6qj" path="res://tmp/tmp.tscn" id="2_h6km4"]
+
+[node name="Main" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k4jxq")
+
+[node name="TmpCard" parent="." instance=ExtResource("2_h6km4")]
+visible = false

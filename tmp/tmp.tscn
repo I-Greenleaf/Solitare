@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://x0uyumwef6qj"]
+
+[ext_resource type="PackedScene" uid="uid://bh5otc0jxdrqn" path="res://card/card.tscn" id="1_jlydc"]
+[ext_resource type="Script" path="res://tmp/tmp.gd" id="1_syh2d"]
+[ext_resource type="Texture2D" uid="uid://c0q52cj0mmo7h" path="res://art/Card Asset/Standard 52 Cards/solitaire/individuals/club/10_club.png" id="2_7gdq5"]
+[ext_resource type="Texture2D" uid="uid://y6jh6tcxvqn3" path="res://art/Card Asset/Standard 52 Cards/solitaire/individuals/card back/card_back.png" id="3_35fvy"]
+[ext_resource type="PackedScene" uid="uid://bjdayvg8l3m0c" path="res://card/clickable_card.tscn" id="5_yd1bh"]
+[ext_resource type="Texture2D" uid="uid://4sn2vu74hbij" path="res://art/Card Asset/Standard 52 Cards/solitaire/individuals/diamond/10_diamond.png" id="6_6rmgh"]
+
+[node name="TmpCard" type="Node2D"]
+script = ExtResource("1_syh2d")
+
+[node name="Club10" parent="." instance=ExtResource("1_jlydc")]
+visible = true
+texture = ExtResource("2_7gdq5")
+front_texture = ExtResource("2_7gdq5")
+back_texture = ExtResource("3_35fvy")
+
+[node name="FlipButton" type="Button" parent="."]
+offset_left = 1.0
+offset_top = 157.0
+offset_right = 101.0
+offset_bottom = 203.0
+text = "Flip"
+
+[node name="Diamond10" parent="." instance=ExtResource("5_yd1bh")]
+visible = true
+offset_left = 155.0
+offset_top = 3.0
+offset_right = 255.0
+offset_bottom = 147.0
+front_texture = ExtResource("6_6rmgh")
+back_texture = ExtResource("3_35fvy")
+
+[connection signal="pressed" from="FlipButton" to="." method="_on_flip_button_pressed"]
+[connection signal="card_pressed" from="Diamond10" to="." method="_on_diamond_10_card_pressed"]

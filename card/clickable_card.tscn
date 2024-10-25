@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjdayvg8l3m0c"]
+
+[ext_resource type="PackedScene" uid="uid://bh5otc0jxdrqn" path="res://card/card.tscn" id="1_bjese"]
+[ext_resource type="Script" path="res://card/button.gd" id="2_0mg44"]
+
+[node name="clickableCard" instance=ExtResource("1_bjese")]
+
+[node name="Button" type="Button" parent="." index="1"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("2_0mg44")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
