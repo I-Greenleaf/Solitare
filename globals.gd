@@ -1,9 +1,16 @@
-extends Button
+extends Node
+
+# Global variabls
+var card_size = Vector2(100, 144)
+
+
+
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	size = Globals.card_size
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
